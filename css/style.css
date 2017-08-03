@@ -9,10 +9,11 @@ li {
 
 .tree ul {
   position: relative;
-  padding: 1em 0 0 0;
+  padding: 0;
   white-space: nowrap;
   margin: 0 auto;
   text-align: center;
+  transition: 1.5s ease-in-out;
 }
 
 .tree ul::after {
@@ -105,7 +106,6 @@ li {
 .show-child:not(:checked) ~ ul {
   /*hidden stuff*/
   height: 0;
-  padding: 0;
 }
 
 .show-child:not(:checked) ~ ul:before {
@@ -116,6 +116,10 @@ li {
 .show-child:not(:checked) ~ ul > li:before, .show-child:not(:checked) ~ ul > li:after {
   /*hidden stuff*/
   opacity: 0;
+}
+
+.show-child:checked ~ ul {
+  padding: 1em 0 0 0;
 }
 
 .show-child:checked ~ ul > .child {
